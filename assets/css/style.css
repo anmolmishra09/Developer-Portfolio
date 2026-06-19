@@ -1938,3 +1938,17 @@ textarea.form-input::-webkit-resizer { display: none; }
     transform:rotate(360deg);
   }
 }
+
+.modal-avatar-box {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.modal-avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
