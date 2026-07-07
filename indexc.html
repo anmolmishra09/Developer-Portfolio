@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmol Mishra | Engineering Terminal</title>
+    <meta name="description" content="Interactive CLI terminal portfolio of Anmol Mishra - AI, ML & Software Engineer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/images/avatar-3.png" type="image/x-icon" />
+
+    <style>
+        /* ==========================================================================
+           Modern Cyber-AI Terminal Design Archetype
+           ========================================================================== */
+
+        :root {
+            --bg-dark: #0a0b10;
+            --terminal-bg: rgba(13, 16, 23, 0.85);
+            --border-color: rgba(0, 180, 216, 0.25);
+            --border-focus: rgba(114, 9, 183, 0.6);
+            
+            /* Dynamic Palette */
+            --text-primary: #e2e8f0;
+            --text-muted: #64748b;
+            --cyan-accent: #00b4d8;
+            --purple-accent: #7209b7;
+            --pink-accent: #f72585;
+            --green-accent: #4cc9f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Fira Code', 'JetBrains Mono', monospace;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Background Canvas Layer */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Retro CRT and Scanner Overlays */
+        .crt-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+            z-index: 998;
+        }
+
+        /* Floating Interactive Navigation Button */
+        .gui-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .gui-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(114, 9, 183, 0.1));
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gui-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--pink-accent);
+            box-shadow: 0 0 15px rgba(247, 37, 133, 0.4);
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.2), rgba(114, 9, 183, 0.2));
+        }
+
+        /* Master Terminal Wrapper */
+        .terminal-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 950px;
+            height: 80vh;
+            background-color: var(--terminal-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            z-index: 5;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                        0 0 40px rgba(0, 180, 216, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .terminal-container:focus-within {
+            border-color: var(--border-focus);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+                        0 0 40px rgba(114, 9, 183, 0.15);
+        }
+
+        /* Top Window Header Bar */
+        .terminal-header {
+            background-color: rgba(7, 9, 15, 0.9);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 11px;
+            border-top-right-radius: 11px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+
+        .header-title {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        .header-title .user-host { color: var(--cyan-accent); }
+        .header-title .path { color: var(--purple-accent); }
+
+        .system-status {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-indicator {
+            width: 6px;
+            height: 6px;
+            background-color: #27c93f;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #27c93f;
+            animation: pulse 2s infinite;
+        }
+
+        /* Interior Terminal Output Display Area */
+        .terminal-body {
+            padding: 25px;
+            flex: 1;
+            overflow-y: auto;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbars */
+        .terminal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .terminal-body::-webkit-scrollbar-thumb:hover {
+            background: var(--border-color);
+        }
+
+        /* Welcome Elements */
+        .welcome-banner {
+            margin-bottom: 30px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            padding-bottom: 25px;
+        }
+
+        .ascii-art {
+            background: linear-gradient(90deg, var(--cyan-accent), var(--purple-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 0.75rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+        }
+
+        .tagline {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        /* Interactive Specialty Target Elements */
+        .roles-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .role-tag {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .role-tag.sde:hover { border-color: var(--cyan-accent); color: var(--cyan-accent); box-shadow: 0 0 10px rgba(0, 180, 216, 0.2); }
+        .role-tag.ai:hover { border-color: var(--purple-accent); color: var(--purple-accent); box-shadow: 0 0 10px rgba(114, 9, 183, 0.2); }
+        .role-tag.ml:hover { border-color: var(--pink-accent); color: var(--pink-accent); box-shadow: 0 0 10px rgba(247, 25, 133, 0.2); }
+        .role-tag.prompt:hover { border-color: var(--green-accent); color: var(--green-accent); box-shadow: 0 0 10px rgba(76, 201, 240, 0.2); }
+
+        .help-hint {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .highlight { color: var(--pink-accent); font-weight: bold; }
+
+        /* Input Pipeline Line Elements */
+        .input-line {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        .prompt {
+            color: var(--cyan-accent);
+            font-weight: bold;
+            white-space: nowrap;
+            margin-right: 8px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+
+        #command-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: inherit;
+            width: 100%;
+            /* Hide the browser's standard text caret to use our animated custom terminal block */
+            caret-color: transparent; 
+        }
+
+        /* Animated Custom Terminal Block Cursor Style Archetype */
+        .custom-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 17px;
+            background-color: var(--pink-accent);
+            box-shadow: 0 0 8px var(--pink-accent);
+            animation: blink 1s step-end infinite;
+            position: absolute;
+            pointer-events: none;
+            left: 0;
+        }
+
+        /* Core UI Keyframe Animations */
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+
+        @keyframes blink {
+            from, to { background-color: transparent; box-shadow: none; }
+            50% { background-color: var(--pink-accent); box-shadow: 0 0 8px var(--pink-accent); }
+        }
+
+        /* Screen Breakpoints Layer */
+        @media (max-width: 768px) {
+            .ascii-art { font-size: 0.45rem; }
+            .terminal-container { width: 95%; height: 85vh; }
+            .gui-toggle { top: 10px; right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+    
+    <div class="gui-toggle">
+        <a href="index.html" class="gui-btn">
+            <span class="btn-icon">⚡</span>
+            <span class="btn-text">Explore GUI Mode</span>
+        </a>
+    </div>
+
+    <main class="terminal-container">
+        <div class="terminal-header">
+            <div class="header-buttons">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="header-title">
+                <span class="user-host">anmol@core-ai</span>:<span class="path">~</span>$ node portfolio.js
+            </div>
+            <div class="system-status">
+                <span class="status-indicator"></span> ACTIVE // SDE_CORE_V2
+            </div>
+        </div>
+        
+        <div id="terminal-body" class="terminal-body">
+            <div class="welcome-banner">
+                <pre class="ascii-art">
+█████╗ ███╗   ██╗███╗   ███╗██████╗ ██╗     
+██╔══██╗████╗  ██║████╗ ████║██╔══██╗██║     
+███████║██╔██╗ ██║██╔████╔██║██║  ██║██║     
+██╔══██║██║╚██╗██║██║╚██╔╝██║██║  ██║██║     
+██║  ██║██║ ╚████║██║ ╚═╝ ██║██████╔╝███████╗
+╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝     ╚═╝╚═════╝ ╚══════╝
+███╗   ███╗██╗███████╗██╗  ██╗██████╗  █████╗ 
+████╗ ████║██║██╔════╝██║  ██║██╔══██╗██╔══██╗
+██╔████╔██║██║███████╗███████║██████╔╝███████║
+██║╚██╔╝██║██║╚════██║██╔══██║██╔══██╗██╔══██║
+██║ ╚═╝ ██║██║███████║██║  ██║██║  ██║██║  ██║
+╚═╝     ╚═╝╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝</pre>
+                <p class="tagline">Multidisciplinary Engineer navigating the intersections of code and cognition.</p>
+                
+                <div class="roles-container">
+                    <span class="role-tag sde">Software Engineer</span>
+                    <span class="role-tag ai">AI Engineer</span>
+                    <span class="role-tag ml">Machine Learning</span>
+                    <span class="role-tag prompt">Prompt Architect</span>
+                </div>
+                <p class="help-hint">Type <span class="highlight">help</span> to explore available system operations.</p>
+            </div>
+
+            <div id="output"></div>
+            
+            <div class="input-line">
+                <span class="prompt">anmol@core-ai:~$</span>
+                <div class="input-wrapper">
+                    <input type="text" id="command-input" spellcheck="false" autocomplete="off" autofocus>
+                    <span id="terminal-cursor" class="custom-cursor"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('particles');
+            const ctx = canvas.getContext('2d');
+            
+            let particlesArray = [];
+            const maxParticles = 65; // Balanced particle density
+            
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Particle blueprint
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1; // Sleek micro-nodes
+                    this.speedX = (Math.random() * 0.4) - 0.2; // Slow, drifting movement
+                    this.speedY = (Math.random() * 0.4) - 0.2;
+                    this.opacity = Math.random() * 0.5 + 0.2;
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    // Bounce off screens edge boundaries
+                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(0, 180, 216, ${this.opacity})`; // Neon Cyan
+                    ctx.fill();
+                }
+            }
+
+            // Populate system
+            function init() {
+                particlesArray = [];
+                for(let i = 0; i < maxParticles; i++) {
+                    particlesArray.push(new Particle());
+                }
+            }
+
+            // Draw interactive node lines (Constellation/Neural Network pattern)
+            function connectNodes() {
+                let maxDistance = 135;
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        let dx = particlesArray[a].x - particlesArray[b].x;
+                        let dy = particlesArray[a].y - particlesArray[b].y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < maxDistance) {
+                            // Opacity fades out if distance increases
+                            let alpha = (1 - (distance / maxDistance)) * 0.15;
+                            ctx.strokeStyle = `rgba(114, 9, 183, ${alpha})`; // Elegant Deep Purple Network links
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Core Animation Engine Tick Run loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                    particlesArray[i].draw();
+                }
+                
+                connectNodes();
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+        });
+
+        /* ==========================================================================
+           Terminal Cursor & Automated Scroll Execution Engine 
+           ========================================================================== */
+        const terminalBody = document.getElementById('terminal-body');
+        const commandInput = document.getElementById('command-input');
+        const customCursor = document.getElementById('terminal-cursor');
+
+        // Focus text input field anywhere terminal body is clicked
+        terminalBody.addEventListener('click', () => {
+            commandInput.focus();
+        });
+
+        // Function to perfectly handle text width calculation for cursor translation
+        function updateCursorPosition() {
+            const text = commandInput.value;
+            
+            // Create temporary span container to measure structural text dimension metrics
+            const dummySpan = document.createElement('span');
+            dummySpan.style.fontFamily = getComputedStyle(commandInput).fontFamily;
+            dummySpan.style.fontSize = getComputedStyle(commandInput).fontSize;
+            dummySpan.style.whiteSpace = 'pre';
+            dummySpan.style.visibility = 'hidden';
+            dummySpan.style.position = 'absolute';
+            
+            // Swap standard spaces with non-breaking ones to keep width tracking accurate
+            dummySpan.textContent = text.replace(/ /g, '\u00a0');
+            document.body.appendChild(dummySpan);
+            
+            const textWidth = dummySpan.getBoundingClientRect().width;
+            document.body.removeChild(dummySpan);
+
+            // Map block pointer shift matching exact input size offset
+            customCursor.style.transform = `translateX(${textWidth}px)`;
+        }
+
+        // Automated terminal content scroll utility pipeline
+        function autoScrollToBottom() {
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+
+        // Attach layout updates to dynamic typing inputs
+        commandInput.addEventListener('input', () => {
+            updateCursorPosition();
+            autoScrollToBottom();
+        });
+
+        // Track key events for automated updates on complex inputs (e.g., delete/enter)
+        commandInput.addEventListener('keydown', () => {
+            setTimeout(updateCursorPosition, 0);
+            setTimeout(autoScrollToBottom, 0);
+        });
+
+        // Run calibration sequence loop on initial execution
+        updateCursorPosition();
+    </script>
+    <script src="assets/cli/script.js"></script>
+</body>
+</html>
