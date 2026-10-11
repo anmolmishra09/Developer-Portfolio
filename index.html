@@ -4,113 +4,99 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Portfolio</title>
-  
-    <!--
-    - favicon
-  -->
-  <link rel="icon" href="./assets/images/avatar-3.png" />
+    <title>Anmol | Software Engineer & AI Systems</title>
+    <meta name="description" content="Portfolio of Anmol - SDE 1, Java Backend, DSA, Distributed Systems, and Generative AI / RAG Engineer." />
 
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/avatar-3.png" />
 
-    <!--
-    - custom css link
-  -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
-    <!--
-    - google font link
-  -->
+    <!-- Google Fonts & JetBrains Mono for Code Aesthetics -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
-    <!--
-    - #MAIN
-  -->
+    <!-- Ambient Background Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
 
-    <main>
-      <!--
-      - #SIDEBAR
-    -->
-
+    <main class="hud-container">
+      <!-- ================= SIDEBAR ================= -->
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
           <figure class="avatar-box">
-  <img
-    src="./assets/images/avatar-3.png"
-    alt="Anmol Mishra"
-    class="avatar-img"
-  />
-</figure>
+            <img
+              src="./assets/images/avatar-3.png"
+              alt="Anmol"
+              class="avatar-img"
+              onerror="this.src='https://ui-avatars.com/api/?name=Anmol&background=10141d&color=38bdf8&size=150&font-size=0.4'"
+            />
+            <div class="status-indicator" title="Open to Opportunities">
+              <span class="status-pulse"></span>
+              <span class="status-dot"></span>
+            </div>
+          </figure>
 
           <div class="info-content">
-            <h1 class="name">Anmol Mishra</h1>
-
-            <p class="title">Aspiring Software Engineer</p>
+            <h1 class="name" title="Anmol">Anmol</h1>
+            <p class="title-badge">Software Engineer (SDE 1)</p>
+            <span class="sub-badge">Java • DSA • Backend • RAG</span>
           </div>
 
-          <button class="info_more-btn" data-sidebar-btn>
-            <span>Show Contacts</span>
-
-            <ion-icon name="chevron-down"></ion-icon>
+          <button class="info_more-btn" data-sidebar-btn aria-label="Toggle profile contact details">
+            <span>Details</span>
+            <ion-icon name="chevron-down-outline"></ion-icon>
           </button>
         </div>
 
         <div class="sidebar-info_more">
+          <!-- Terminal Quick Metric Chips -->
+          <div class="stats-card">
+            <div class="stat-item">
+              <span class="stat-val">560+</span>
+              <span class="stat-lbl">DSA Solved</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">&lt; 120ms</span>
+              <span class="stat-lbl">Target Latency</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">RAG/LLM</span>
+              <span class="stat-lbl">Vector Search</span>
+            </div>
+          </div>
+
           <div class="separator"></div>
 
           <ul class="contacts-list">
             <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
-              </div>
-
+              <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
               <div class="contact-info">
                 <p class="contact-title">Email</p>
-
-                <a href="mailto:richard@example.com" class="contact-link"
-                  >anmolmishra86229@gmail.com</a
-                >
+                <a href="mailto:anmolmishra86229@gmail.com" class="contact-link">anmolmishra86229@gmail.com</a>
               </div>
             </li>
 
-             <li class="contact-item"> 
-
-             <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div> 
-
-             <div class="contact-info"> 
-             <p class="contact-title">Phone</p> 
-
-             <a href="tel:+91 8787222966" class="contact-link">+91 (87) 8722-2966</a>
-            </div> 
-
-            <!-- <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="calendar-outline"></ion-icon>
-              </div>
-
+            <li class="contact-item">
+              <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
               <div class="contact-info">
-                <p class="contact-title">Birthday</p>
-
-                <time datetime="1982-06-23">October 09, 2004</time>
+                <p class="contact-title">Phone</p>
+                <a href="tel:+918787222966" class="contact-link">+91 87872 22966</a>
               </div>
-            </li>  -->
+            </li>
 
             <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
-              </div>
-
+              <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
               <div class="contact-info">
                 <p class="contact-title">Location</p>
-
                 <address>Uttar Pradesh, India</address>
               </div>
             </li>
@@ -120,1077 +106,554 @@
 
           <ul class="social-list">
             <li class="social-item">
-              <a
-                href="https://www.linkedin.com/in/anmolmishra09/"
-                class="social-link"
-              >
+              <a href="https://www.linkedin.com/in/anmolmishra09/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
-
-            <!-- <li class="social-item">
-              <a href="https://x.com/yashig406" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li> -->
-
             <li class="social-item">
-              <a
-                href="https://www.instagram.com/anmolmishra09/"
-                class="social-link"
-              >
-                <ion-icon name="logo-instagram"></ion-icon>
+              <a href="https://github.com/anmolmishra09" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                <ion-icon name="logo-github"></ion-icon>
               </a>
             </li>
-
             <li class="social-item">
-              <a href="https://www.youtube.com/@anmolmishra.09" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
-              </a>
-            </li>
-
-            <li class="social-item">
-              <a href="https://medium.com/@anmolmishra09" class="social-link">
+              <a href="https://medium.com/@anmolmishra09" target="_blank" rel="noopener noreferrer" class="social-link" title="Medium Technical Blog">
                 <ion-icon name="logo-medium"></ion-icon>
               </a>
             </li>
-            <!-- <li class="social-item">
-              <a href="https://www.quora.com/profile/Yashi-Gupta-259" class="social-link">
-                <ion-icon name="logo-quora"></ion-icon>
+            <li class="social-item">
+              <a href="https://www.youtube.com/@anmolmishra.09" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
+                <ion-icon name="logo-youtube"></ion-icon>
               </a>
-            </li> -->
-            
+            </li>
           </ul>
         </div>
       </aside>
 
-      <!--
-      - #main-content
-    -->
-
+      <!-- ================= MAIN CONTENT ================= -->
       <div class="main-content">
-        <!--
-        - #NAVBAR
-      -->
-
+        <!-- Floating HUD Navbar -->
         <nav class="navbar">
           <ul class="navbar-list">
             <li class="navbar-item">
-              <button class="navbar-link active" data-nav-link>About</button>
+              <button class="navbar-link active" data-nav-link="overview">System</button>
             </li>
-
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Resume</button>
+              <button class="navbar-link" data-nav-link="skills">Engineering</button>
             </li>
-
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Portfolio</button>
+              <button class="navbar-link" data-nav-link="projects">Projects</button>
             </li>
-
-
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Contact</button>
+              <button class="navbar-link" data-nav-link="experience">Timeline</button>
             </li>
-
             <li class="navbar-item">
-              <a href="indexc.html" class="navbar-link" style="color: #00ff41; font-weight: bold; display: flex; align-items: center; gap: 5px;">
-                <ion-icon name="terminal-outline"></ion-icon> CMD
-              </a>
+              <button class="navbar-link" data-nav-link="contact">Contact</button>
             </li>
-            
+            <li class="navbar-item">
+              <button class="navbar-link cmd-link" data-cmd-trigger title="Open Live CLI">
+                <ion-icon name="terminal-outline"></ion-icon> <span>CLI</span>
+              </button>
+            </li>
           </ul>
         </nav>
 
-        <!--
-        - #ABOUT
-      -->
-
-      <article class="about active" data-page="about">
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-           I’m a Software Engineer and B.Tech CSE graduate from India with a strong interest in building modern, scalable, and user-focused digital products. My core strengths include frontend development with React and Next.js, along with Java, Data Structures & Algorithms, and modern web technologies. I’m also exploring Generative AI, AI/ML, Claude code , and emerging technologies to expand my ability to build intelligent and impactful applications.
-          </p>
-
-          <p>
-           I enjoy transforming ideas into intuitive, responsive, and technically robust products. Whether I’m developing polished frontend experiences, designing scalable backend systems, or integrating AI capabilities into applications, I focus on writing clean, maintainable code and creating solutions that deliver real value.
-          </p>
-          <p>Driven by curiosity and continuous learning, I’m looking to grow as an engineer, work on challenging problems, and contribute to innovative products that make a meaningful impact.</p>
-        </section>
-
-        <!--
-        - service
-      -->
-
-
-
-   
-          <section class="service">
-            <h3 class="h3 article-title">What I'm doing</h3>
-
-            <ul class="service-list">
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-dev.svg"
-                    alt="Web development icon"
-                    width="40"
-                  />
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Full-Stack Development</h4>
-                  <p class="service-item-text">
-                    I specialize in both frontend and backend development,
-                    creating seamless and scalable applications.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-ds.svg"
-                    alt="Algorithm icon"
-                    width="40"
-                  />
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">
-                    Data Structures & Algorithms
-                  </h4>
-                  <p class="service-item-text">
-                    I design efficient algorithms and choose the right data
-                    structures to solve complex problems.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-design.svg"
-                    alt="UI/UX Design icon"
-                    width="40"
-                  />
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">User-Centric Design</h4>
-                  <p class="service-item-text">
-                    I create intuitive and engaging user interfaces that enhance
-                    the overall experience.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-quote.svg"
-                    alt="Leadership icon"
-                    width="40"
-                  />
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Team Leadership</h4>
-                  <p class="service-item-text">
-                    As a leader, I foster collaboration and ensure the success
-                    of cross-functional teams in tech projects.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </section>
-
-          <!-- <!--
-          - testimonials
-        -->
-          <!-- <section class="testimonials">
-            <h3 class="h2 article-title">Highlights</h3>
-
-            <ul class="testimonials-list has-scrollbar">
-              <li class="testimonials-item">
-                <div class="content-card" data-testimonials-item style="padding: 20px;">
-                  <img
-                    src="faewp.jpeg"
-                    alt=""
-                    class="responsive-img"
-                    data-testimonials-avatar />         -->
-
-         <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/aavatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        
-
-          <!--
-          - clients
-        -->
-
-          <!-- <section class="clients">
-            <h3 class="h3 clients-title">Clients</h3>
-
-            <ul class="clients-list has-scrollbar">
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-1-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-2-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-3-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-4-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-5-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-6-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-            </ul>
-          </section> -->
-        </article>
-
-        <!--
-        - #RESUME
-      -->
-
-        <article class="resume" data-page="resume">
-          <header>
-            <h2 class="h2 article-title">Resume</h2>
+        <!-- ================= ARTICLE 1: OVERVIEW / SYSTEM ================= -->
+        <article class="page-panel active" data-page="overview">
+          <header class="section-header">
+            <h2 class="h2 article-title">System Architecture & Bio</h2>
+            <div class="badge-tag">STATUS: 200 OK</div>
           </header>
 
-          <section class="skill">
-            <h3 class="h3 skills-title">My skills</h3>
-
-            <ul class="skills-list content-card" style="padding:10px; margin-top: 0;">
-
-              
-              <div style="display: flex; flex-wrap: wrap;">
-                <!-- Programming Languages -->
-<img style="margin: 5px;" alt="Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white" />
-<img style="margin: 5px;" alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
-<img style="margin: 5px;" alt="Python" src="https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white" />
-<img style="margin: 5px;" alt="SQL" src="https://img.shields.io/badge/sql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" />
-
-<!-- Mobile Development -->
-<img style="margin: 5px;" alt="React Native" src="https://img.shields.io/badge/React_Native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
-<img style="margin: 5px;" alt="Expo" src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" />
-<img style="margin: 5px;" alt="Expo Router" src="https://img.shields.io/badge/Expo_Router-1B1F23?style=for-the-badge" />
-<img style="margin: 5px;" alt="Reanimated" src="https://img.shields.io/badge/React_Native_Reanimated-FF4154?style=for-the-badge&logo=react&logoColor=white" />
-<img style="margin: 5px;" alt="API Integration" src="https://img.shields.io/badge/API_Integration-4CAF50?style=for-the-badge" />
-
-<!-- Frontend Development -->
-<img style="margin: 5px;" alt="ReactJS" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
-<img style="margin: 5px;" alt="NextJS" src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-<img style="margin: 5px;" alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
-<img style="margin: 5px;" alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
-<img style="margin: 5px;" alt="Tailwind CSS" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-<img style="margin: 5px;" alt="Material UI" src="https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white" />
-<img style="margin: 5px;" alt="Framer Motion" src="https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=white" />
-
-<!-- Backend Development -->
-<img style="margin: 5px;" alt="NodeJS" src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-<img style="margin: 5px;" alt="ExpressJS" src="https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
-<img style="margin: 5px;" alt="REST API" src="https://img.shields.io/badge/REST_API-FF6C37?style=for-the-badge" />
-<img style="margin: 5px;" alt="JWT" src="https://img.shields.io/badge/JWT_Auth-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" />
-<img style="margin: 5px;" alt="WebSocket" src="https://img.shields.io/badge/WebSocket-010101?style=for-the-badge" />
-<img style="margin: 5px;" alt="MySQL" src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" />
-
-<!-- API & Networking -->
-<img style="margin: 5px;" alt="Axios" src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" />
-<img style="margin: 5px;" alt="Fetch API" src="https://img.shields.io/badge/Fetch_API-4CAF50?style=for-the-badge" />
-<img style="margin: 5px;" alt="OpenAI API" src="https://img.shields.io/badge/OpenAI_API-412991?style=for-the-badge&logo=openai&logoColor=white" />
-
-<!-- Testing -->
-<img style="margin: 5px;" alt="Jest" src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" />
-<img style="margin: 5px;" alt="React Testing Library" src="https://img.shields.io/badge/RTL-E33332?style=for-the-badge&logo=testinglibrary&logoColor=white" />
-<img style="margin: 5px;" alt="Cypress" src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white" />
-<img style="margin: 5px;" alt="Postman" src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
-
-<!-- Tools & Platforms -->
-<img style="margin: 5px;" alt="Git" src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-<img style="margin: 5px;" alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-<img style="margin: 5px;" alt="Cursor" src="https://img.shields.io/badge/Cursor_AI-000000?style=for-the-badge" />
-<img style="margin: 5px;" alt="GitHub Copilot" src="https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white" />
-<img style="margin: 5px;" alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-FF6B6B?style=for-the-badge" />
-<img style="margin: 5px;" alt="Ollama" src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge" />
-
-<!-- Core Concepts -->
-<img style="margin: 5px;" alt="Agile" src="https://img.shields.io/badge/Agile_Methodology-0A66C2?style=for-the-badge" />
-<img style="margin: 5px;" alt="Component Architecture" src="https://img.shields.io/badge/Component_Based_Architecture-4CAF50?style=for-the-badge" />
-<img style="margin: 5px;" alt="Code Review" src="https://img.shields.io/badge/Code_Reviews-FF9800?style=for-the-badge" />
-<img style="margin: 5px;" alt="Sprint Planning" src="https://img.shields.io/badge/Sprint_Planning-9C27B0?style=for-the-badge" />
-              </div>
-              
-            </ul>
+          <section class="about-text">
+            <p class="lead-text">
+              I am a <strong>Software Engineer (SDE)</strong> dedicated to high-performance system design, algorithmic problem solving, robust Java backend architectures, and intelligent Generative AI / RAG pipelines.
+            </p>
+            <p>
+              My engineering philosophy revolves around writing deterministic, testable code, optimizing algorithmic time/space complexities, and building modular systems that scale smoothly under load. Whether designing concurrent Java backends, vector search indexes with embeddings, or state-of-the-art interactive frontends in Next.js, I bridge foundational computer science with cutting-edge engineering.
+            </p>
           </section>
 
-          <br>
+          <!-- System Focus Domains -->
+          <section class="service">
+            <h3 class="h3 section-subtitle">Core Architectural Focus</h3>
 
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+            <div class="service-grid">
+              <div class="service-card">
+                <div class="card-icon-box">
+                  <ion-icon name="hardware-chip-outline"></ion-icon>
+                </div>
+                <div class="card-content">
+                  <h4 class="h4">Data Structures & High-Efficiency Algorithms</h4>
+                  <p>
+                    Proficient in trees, graphs, dynamic programming, sorting internals, and space-time optimization. Rigorous focus on clean asymptotic bounds and edge-case validation.
+                  </p>
+                </div>
               </div>
 
-              <h3 class="h3">Experience</h3>
+              <div class="service-card">
+                <div class="card-icon-box">
+                  <ion-icon name="server-outline"></ion-icon>
+                </div>
+                <div class="card-content">
+                  <h4 class="h4">Scalable Java & Backend Services</h4>
+                  <p>
+                    Clean OOP design, multithreading, REST APIs, microservices, connection pooling, and relational schemas built with SQL and indexed query optimizations.
+                  </p>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="card-icon-box">
+                  <ion-icon name="git-network-outline"></ion-icon>
+                </div>
+                <div class="card-content">
+                  <h4 class="h4">Generative AI, RAG & Vector Workflows</h4>
+                  <p>
+                    Production RAG (Retrieval-Augmented Generation) architectures, chunking strategies, embeddings, hybrid vector search, and LLM orchestration (LangChain, OpenAI, Gemini).
+                  </p>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="card-icon-box">
+                  <ion-icon name="layers-outline"></ion-icon>
+                </div>
+                <div class="card-content">
+                  <h4 class="h4">Full-Stack Interface & Systems Integration</h4>
+                  <p>
+                    Modern, responsive UIs built with React, Next.js, and TypeScript, engineered with performant hydration, WebSocket feeds, and secure JWT authentication.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- ================= ARTICLE 2: SKILLS & ENGINEERING MATRIX ================= -->
+        <article class="page-panel" data-page="skills">
+          <header class="section-header">
+            <h2 class="h2 article-title">Engineering Stack & Skills</h2>
+            <div class="badge-tag">STACK MATRIX</div>
+          </header>
+
+          <section class="skills-section">
+            <!-- Group 1: Core DSA & Languages -->
+            <div class="skill-group">
+              <h4 class="skill-category-title"><ion-icon name="code-slash-outline"></ion-icon> Core CS & Languages</h4>
+              <div class="tech-chip-grid">
+                <div class="tech-chip">
+                  <span class="chip-name">Java (Core & OOP)</span>
+                  <span class="chip-metric">Advanced</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">DSA & Complexity Analysis</span>
+                  <span class="chip-metric">LeetCode 350+</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">Python</span>
+                  <span class="chip-metric">Backend & AI</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">JavaScript / TypeScript</span>
+                  <span class="chip-metric">ES6+</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">SQL (MySQL / Postgres)</span>
+                  <span class="chip-metric">Indexing & Queries</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group 2: Backend Architecture -->
+            <div class="skill-group">
+              <h4 class="skill-category-title"><ion-icon name="cube-outline"></ion-icon> Backend & System Design</h4>
+              <div class="tech-chip-grid">
+                <div class="tech-chip">
+                  <span class="chip-name">Spring Boot / Java APIs</span>
+                  <span class="chip-metric">REST Services</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">Node.js & Express</span>
+                  <span class="chip-metric">Asynchronous I/O</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">FastAPI</span>
+                  <span class="chip-metric">Python Services</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">JWT & Auth Architecture</span>
+                  <span class="chip-metric">Stateless Security</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">WebSockets</span>
+                  <span class="chip-metric">Bidirectional Streams</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group 3: AI/ML & RAG Systems -->
+            <div class="skill-group">
+              <h4 class="skill-category-title"><ion-icon name="sparkles-outline"></ion-icon> AI/ML & RAG Architecture</h4>
+              <div class="tech-chip-grid">
+                <div class="tech-chip highlight-chip">
+                  <span class="chip-name">RAG (Retrieval-Augmented Gen)</span>
+                  <span class="chip-metric">Embeddings & Retrieval</span>
+                </div>
+                <div class="tech-chip highlight-chip">
+                  <span class="chip-name">Vector Databases & FAISS</span>
+                  <span class="chip-metric">Semantic Search</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">LLM Integration (Gemini, Claude, GPT)</span>
+                  <span class="chip-metric">LangChain / APIs</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">Prompt Tuning & Evaluation</span>
+                  <span class="chip-metric">Deterministic Prompts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group 4: Frontend & DevOps -->
+            <div class="skill-group">
+              <h4 class="skill-category-title"><ion-icon name="construct-outline"></ion-icon> Frontend, DevOps & Tooling</h4>
+              <div class="tech-chip-grid">
+                <div class="tech-chip">
+                  <span class="chip-name">React & Next.js</span>
+                  <span class="chip-metric">SSR / Client State</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">Tailwind CSS</span>
+                  <span class="chip-metric">Design Systems</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">Docker & Containers</span>
+                  <span class="chip-metric">Deployment</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">Git & CI/CD Pipelines</span>
+                  <span class="chip-metric">Version Control</span>
+                </div>
+                <div class="tech-chip">
+                  <span class="chip-name">Jest & Unit Testing</span>
+                  <span class="chip-metric">TDD & Coverage</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- ================= ARTICLE 3: PRODUCTION PROJECTS ================= -->
+        <article class="page-panel" data-page="projects">
+          <header class="section-header">
+            <h2 class="h2 article-title">Engineered Projects</h2>
+            <div class="badge-tag">SHOWCASE</div>
+          </header>
+
+          <!-- Category Filters -->
+          <ul class="filter-list">
+            <li class="filter-item"><button class="filter-btn active" data-filter="all">All Repos</button></li>
+            <li class="filter-item"><button class="filter-btn" data-filter="backend">Backend & DSA</button></li>
+            <li class="filter-item"><button class="filter-btn" data-filter="ai">AI / RAG / ML</button></li>
+            <li class="filter-item"><button class="filter-btn" data-filter="fullstack">Full-Stack</button></li>
+          </ul>
+
+          <div class="projects-grid">
+            <!-- Project 1: Smart Traffic Signal -->
+            <div class="project-card" data-category="ai">
+              <div class="project-header">
+                <span class="project-type"><ion-icon name="sparkles"></ion-icon> AI Simulation & Optimization</span>
+                <a href="https://github.com/anmolmishra09/Smart-Traffic-Signal-Control-System" target="_blank" rel="noopener noreferrer" class="ext-link" title="Source Code">
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+              </div>
+              <h3 class="project-title">Smart Adaptive Traffic Control</h3>
+              <p class="project-desc">
+                An algorithmic traffic light control simulation reducing junction bottlenecks using dynamic queue metrics, automated priority scheduling, and computer vision vehicle detection.
+              </p>
+              <div class="project-tech-pills">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>Greedy Scheduling</span>
+                <span>Simulation Algorithms</span>
+              </div>
+              <div class="project-footer">
+                <span class="metric-indicator"><ion-icon name="trending-down-outline"></ion-icon> 35% Wait Time Reduction</span>
+              </div>
+            </div>
+
+            <!-- Project 2: WanderMind AI -->
+            <div class="project-card" data-category="ai fullstack">
+              <div class="project-header">
+                <span class="project-type"><ion-icon name="git-network"></ion-icon> Full-Stack & Generative AI</span>
+                <a href="#" class="ext-link" title="Code Repository"><ion-icon name="logo-github"></ion-icon></a>
+              </div>
+              <h3 class="project-title">WanderMind AI Planner</h3>
+              <p class="project-desc">
+                Intelligent itinerary generation platform combining vector embeddings and LLM reasoning to generate localized day-by-day travel strategies with sub-second streaming responses.
+              </p>
+              <div class="project-tech-pills">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Gemini API</span>
+                <span>Tailwind CSS</span>
+                <span>Firebase</span>
+              </div>
+              <div class="project-footer">
+                <span class="metric-indicator"><ion-icon name="flash-outline"></ion-icon> Streaming SSE Output</span>
+              </div>
+            </div>
+
+            <!-- Project 3: High-Performance Data Analysis & Pipeline -->
+            <div class="project-card" data-category="backend">
+              <div class="project-header">
+                <span class="project-type"><ion-icon name="server"></ion-icon> Backend & Data Processing</span>
+                <a href="https://github.com/anmolmishra09" target="_blank" rel="noopener noreferrer" class="ext-link" title="Code Repository"><ion-icon name="logo-github"></ion-icon></a>
+              </div>
+              <h3 class="project-title">Content Analytics & Ingestion Engine</h3>
+              <p class="project-desc">
+                ETL pipeline processing large catalog datasets, computing categorical viewing correlations, and indexing query data for high-speed lookup and visual reporting.
+              </p>
+              <div class="project-tech-pills">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Matplotlib</span>
+                <span>SQL Schemas</span>
+              </div>
+              <div class="project-footer">
+                <span class="metric-indicator"><ion-icon name="checkmark-done-circle-outline"></ion-icon> Vectorized Processing</span>
+              </div>
+            </div>
+
+            <!-- Project 4: Dog Breed AI Classifier -->
+            <div class="project-card" data-category="ai">
+              <div class="project-header">
+                <span class="project-type"><ion-icon name="eye"></ion-icon> Computer Vision & Deep Learning</span>
+                <a href="https://github.com/anmolmishra09/Use-a-Pre-trained-Image-Classifier-to-Identify-Dog-Breeds" target="_blank" rel="noopener noreferrer" class="ext-link" title="Code Repository"><ion-icon name="logo-github"></ion-icon></a>
+              </div>
+              <h3 class="project-title">Deep Learning Image Classifier</h3>
+              <p class="project-desc">
+                Fine-tuned Convolutional Neural Network (CNN) pipeline applying transfer learning on ResNet/VGG models with validation benchmarking and confusion matrices.
+              </p>
+              <div class="project-tech-pills">
+                <span>PyTorch / Python</span>
+                <span>Transfer Learning</span>
+                <span>CNN Architecture</span>
+              </div>
+              <div class="project-footer">
+                <span class="metric-indicator"><ion-icon name="stats-chart-outline"></ion-icon> 93.8% Classification Accuracy</span>
+              </div>
+            </div>
+
+            <!-- Project 5: Interactive Quiz Engine -->
+            <div class="project-card" data-category="backend">
+              <div class="project-header">
+                <span class="project-type"><ion-icon name="terminal"></ion-icon> Desktop & State Engine</span>
+                <a href="#" class="ext-link" title="Code Repository"><ion-icon name="logo-github"></ion-icon></a>
+              </div>
+              <h3 class="project-title">50 States Knowledge Engine</h3>
+              <p class="project-desc">
+                Event-driven desktop application utilizing coordinate projection algorithms and spatial state lookup tables to execute real-time geometry matching.
+              </p>
+              <div class="project-tech-pills">
+                <span>Python</span>
+                <span>Tkinter</span>
+                <span>Spatial Coordinate Matching</span>
+              </div>
+              <div class="project-footer">
+                <span class="metric-indicator"><ion-icon name="speedometer-outline"></ion-icon> O(1) Hash Map Lookups</span>
+              </div>
+            </div>
+
+            <!-- Project 6: Bus Wala Audio Interface -->
+            <div class="project-card" data-category="fullstack">
+              <div class="project-header">
+                <span class="project-type"><ion-icon name="musical-notes"></ion-icon> Full-Stack & Media</span>
+                <a href="#" class="ext-link" title="Code Repository"><ion-icon name="logo-github"></ion-icon></a>
+              </div>
+              <h3 class="project-title">Bus Wala Audio Streaming</h3>
+              <p class="project-desc">
+                High-performance web media streaming player with client-side buffer management, playlist queues, and responsive audio visualizer capabilities.
+              </p>
+              <div class="project-tech-pills">
+                <span>Next.js</span>
+                <span>React</span>
+                <span>Web Audio API</span>
+                <span>Tailwind CSS</span>
+              </div>
+              <div class="project-footer">
+                <span class="metric-indicator"><ion-icon name="shield-checkmark-outline"></ion-icon> Optimized Client Cache</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= ARTICLE 4: TIMELINE (EXPERIENCE & EDUCATION) ================= -->
+        <article class="page-panel" data-page="experience">
+          <header class="section-header">
+            <h2 class="h2 article-title">Engineering Experience</h2>
+            <div class="badge-tag">CAREER MILESTONES</div>
+          </header>
+
+          <!-- Work Experience -->
+          <section class="timeline-block">
+            <div class="timeline-header-wrap">
+              <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+              <h3 class="h3">Industry Experience</h3>
             </div>
 
             <ol class="timeline-list">
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Generative AI Developer Intern @AI Wallah</h4>
-
-                <span>August 2025 - October 2025</span>
-
+                <div class="timeline-title-row">
+                  <h4 class="h4 timeline-item-title">Generative AI Developer Intern @ AI Wallah</h4>
+                  <span class="timeline-date">Aug 2025 - Oct 2025</span>
+                </div>
                 <p class="timeline-text">
-                 My internship at Ai Walla as a Generative AI Developer Intern is an exciting learning journey, where I work on building and fine-tuning AI-driven solutions using large language models. I contribute to prompt engineering, model integration, and developing intelligent applications that enhance automation and user experience. This role is strengthening my understanding of AI/ML concepts, real-world deployment, 
-                 and problem-solving while giving me hands-on experience in creating scalable, innovative generative AI solutions.
+                  Engineered and fine-tuned AI-driven microservices using large language models. Built prompt evaluation harnesses, implemented retrieval augmented generation (RAG) experiments, and integrated API layers for automated query classification and intelligent workflows.
                 </p>
               </li>
 
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">SDE Intern @Bluestock™🔺</h4>
-
-                <span>July 2025 - August 2025</span>
-
+                <div class="timeline-title-row">
+                  <h4 class="h4 timeline-item-title">SDE Intern @ Bluestock™</h4>
+                  <span class="timeline-date">Jul 2025 - Aug 2025</span>
+                </div>
                 <p class="timeline-text">
-                 My internship at Bluestock™ as an SDE Intern has been a valuable learning experience, where I am working on building and optimizing scalable web applications. 
-                 I contribute to front-end development using modern frameworks, collaborate on backend integrations, and focus on writing clean, efficient, and maintainable code. This role is helping me strengthen my problem-solving skills, understand real-world software development workflows, and gain hands-on experience in delivering user-focused, high-performance solutions.
+                  Engineered scalable web client components and integrated high-throughput backend endpoints. Collaborated on code reviews, optimized client bundle performance, and followed rigorous Agile sprint deliverables.
                 </p>
               </li>
 
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Software Development Intern @Prodigy InfoTech</h4>
-
-                <span>2024-2025</span>
-
+                <div class="timeline-item-title-row">
+                  <h4 class="h4 timeline-item-title">Software Development Intern @ Prodigy InfoTech</h4>
+                  <span class="timeline-date">2024 - 2025</span>
+                </div>
                 <p class="timeline-text">
-                  My one-year internship as a Software Development Intern at Prodigy InfoTech has been a valuable learning experience, where I worked on designing and developing scalable software solutions. I gained hands-on experience in front-end and back-end development, improved my
-                   understanding of APIs and databases, and collaborated with cross-functional teams to build user-focused features. This role strengthened my problem-solving skills, coding practices, and understanding of real-world software development workflows while enhancing my ability to deliver efficient and reliable applications.
+                  Developed end-to-end features spanning RESTful APIs, database schema querying, and responsive UI components. Strengthened core debugging workflows, version control hygiene, and software design principles.
                 </p>
               </li>
-
-            
             </ol>
           </section>
 
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
+          <!-- Education -->
+          <section class="timeline-block">
+            <div class="timeline-header-wrap">
+              <div class="icon-box"><ion-icon name="school-outline"></ion-icon></div>
               <h3 class="h3">Education</h3>
             </div>
 
             <ol class="timeline-list">
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Dr. A. P. J. Abdul Kalam Technical University, Lucknow</h4>
-                <span>Ambalika Institute Of Management And Technology </span>
-                <span>(2023-2026)</span>
-
+                <div class="timeline-title-row">
+                  <h4 class="h4 timeline-item-title">B.Tech in Computer Science & Engineering</h4>
+                  <span class="timeline-date">2023 - 2026</span>
+                </div>
+                <span class="timeline-institution">Ambalika Institute of Management and Technology (AKTU, Lucknow)</span>
                 <p class="timeline-text">
-                  My B.Tech journey has been enriching, filled with technical
-                  learning, leadership roles, and hands-on experience through
-                  internships and hackathons. It helped me develop skills in
-                  AI/ML, full-stack development, and problem-solving while
-                  fostering growth and innovation.
+                  Comprehensive coursework in Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, and Object-Oriented Software Design.
                 </p>
               </li>
 
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Board Of Technical Education Uttar Pradesh</h4>
-                <span>R.R. POLYTECHNIC</span>
-                <span>(2020-2023)</span>
-
+                <div class="timeline-title-row">
+                  <h4 class="h4 timeline-item-title">Diploma in Mechanical (Automobile) Engineering</h4>
+                  <span class="timeline-date">2020 - 2023</span>
+                </div>
+                <span class="timeline-institution">R.R. Polytechnic, Sonbhadra (BTEUP)</span>
                 <p class="timeline-text">
-                  I completed a three-year Diploma in Mechanical (Automobile) Engineering from R.R. Polytechnic, Uttar Pradesh, gaining strong fundamentals in automobile systems, mechanical principles, practical skills, problem-solving abilities, and technical discipline for higher studies and engineering challenges.
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Schooling</h4>
-
-                <span>SPCIC Inter College</span>
-                <!-- <span>2002 — 2004</span> -->
-
-                <p class="timeline-text">
-                  My schooling laid a strong foundation for my academic and
-                  personal growth. It instilled discipline, curiosity, and a
-                  love for learning while nurturing my problem-solving and
-                  collaborative skills. These experiences shaped my values and
-                  prepared me for future challenges.
+                  Strong analytical foundation in physics, mechanics, systems design, and engineering mathematics, instilling structural problem-solving rigor.
                 </p>
               </li>
             </ol>
           </section>
-
-         
-
-          
         </article>
 
-        <!--
-        - #PORTFOLIO
-      -->
-
-        <article class="portfolio" data-page="portfolio">
-          <header>
-            <h2 class="h2 article-title">Portfolio</h2>
+        <!-- ================= ARTICLE 5: CONTACT ================= -->
+        <article class="page-panel" data-page="contact">
+          <header class="section-header">
+            <h2 class="h2 article-title">Get in Touch</h2>
+            <div class="badge-tag">REACH OUT</div>
           </header>
 
-          <section class="projects">
-            <ul class="filter-list">
-              <li class="filter-item">
-                <button class="active" data-filter-btn>All</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Web design</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Applications</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Web development</button>
-              </li>
-            </ul>
-
-            <div class="filter-select-box">
-              <button class="filter-select" data-select>
-                <div class="select-value" data-selecct-value>
-                  Select category
+          <div class="contact-wrapper">
+            <div class="contact-info-panel">
+              <h3 class="h3">Let's build scalable systems together</h3>
+              <p>
+                Interested in hiring me for <strong>SDE 1</strong>, <strong>Java Developer</strong>, or <strong>Backend / AI Engineer</strong> roles? Drop me a message or connect directly.
+              </p>
+              <div class="direct-reachout">
+                <div class="reach-row">
+                  <ion-icon name="send-outline"></ion-icon>
+                  <span>anmolmishra86229@gmail.com</span>
                 </div>
-
-                <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
+                <div class="reach-row">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <span>+91 87872 22966</span>
                 </div>
-              </button>
-
-              <ul class="select-list">
-                <li class="select-item">
-                  <button data-select-item>All</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Web design</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Applications</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Web development</button>
-                </li>
-              </ul>
+                <div class="reach-row">
+                  <ion-icon name="navigate-outline"></ion-icon>
+                  <span>Uttar Pradesh, India (Open to Remote / Relocation)</span>
+                </div>
+              </div>
             </div>
 
-            <ul class="project-list">
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/wandermind.png"
-                      alt="finance"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">WanderMind</h3>
-
-                  <p class="project-category">ReactJs-Firebase-Gemini API</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="https://linkedin-postcraft-g406.streamlit.app/">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/postrack.jpg"
-                      alt="orizon"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Smart Traffic Signal Control System</h3>
-
-                  <p class="project-category">Artificial Intelligence / Machine Learning</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="https://github.com/anmolmishra09/Smart-Traffic-Signal-Control-System">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/p3.png"
-                      alt="fundo"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Data Analysis of Netflix</h3>
-
-                  <p class="project-category">Python-Matplotlib</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="applications"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/p-4.jpeg"
-                      alt="brawlhalla" 
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">
-                    50 States: A Quiz Game</h3>
-
-                  <p class="project-category">Tkinter-Python</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="https://github.com/anmolmishra09/Use-a-Pre-trained-Image-Classifier-to-Identify-Dog-Breeds">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/p-5.jpg"
-                      alt="dsm."
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Image-Classifier-to-Identify-Dog-Breeds</h3>
-
-                  <p class="project-category">Python-AI</p>
-                </a>
-              </li>
-
-              <!-- <li
-                class="project-item active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="https://github.com/yashigupta4623/EcoTrack-A-web-extension-to-track-Carbon-Footprints?tab=readme-ov-file">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/ecotrack.png"
-                      alt="metaspark"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">EcoTrack-A-web-extension-to-track-Carbon-Footprints</h3>
-
-                  <p class="project-category">Web design</p>
-                </a>
-              </li> -->
-   
-            </ul>
-          </section>
-        </article>
-
-        <!--
-        - #BLOG
-      -->
-
-        <article class="blog" data-page="blog">
-          <header>
-            <h2 class="h2 article-title">Blog</h2>
-          </header>
-
-          <section class="blog-posts">
-            <ul class="blog-posts-list">
-              <li class="blog-post-item">
-                <a
-                  href="https://medium.com/@yashig406/turning-rejection-into-resilience-d263e0107db3"
-                >
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/rejection.png"
-                      alt="Design conferences in 2022"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23"> Dec 9, 2023 </time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      Turning Rejection into Resilience.
-                    </h3>
-
-                    <p class="blog-text">
-                      Rejection is an opportunity for your selection.
-                    </p>
+            <section class="contact-form-box">
+              <form action="#" class="form" data-form>
+                <div class="input-wrapper">
+                  <div class="field-wrap">
+                    <input type="text" name="fullname" class="form-input" placeholder=" " required data-form-input />
+                    <label class="floating-label">Your Name</label>
                   </div>
-                </a>
-              </li>
 
-              <li class="blog-post-item">
-                <a href="https://www.youtube.com/watch?v=TTezgJKzU5E&t=26s">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/book.jpg"
-                      alt="Best fonts every designer"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Books</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">September 23, 2024</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">Guide to Daryaganj.</h3>
-
-                    <p class="blog-text">
-                      If you are a book lover, you must visit Daryaganj.
-                    </p>
+                  <div class="field-wrap">
+                    <input type="email" name="email" class="form-input" placeholder=" " required data-form-input />
+                    <label class="floating-label">Email Address</label>
                   </div>
-                </a>
-              </li>
+                </div>
 
-              <li class="blog-post-item">
-                <a href="https://www.youtube.com/shorts/soAM0_7kI4Q">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/id_card.jpg"
-                      alt="Design digest #80"
-                      loading="lazy"
-                    />
-                  </figure>
+                <div class="field-wrap">
+                  <textarea name="message" class="form-input form-textarea" placeholder=" " required data-form-input></textarea>
+                  <label class="floating-label">Your Message or Project Opportunity</label>
+                </div>
 
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">Glimpse of Intern Week @Microsoft</h3>
-
-                    <p class="blog-text">
-                      A short to iterate the intern week @Microsoft.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="𝗛𝗼𝘄 𝗜 𝗰𝗿𝗮𝗰𝗸𝗲𝗱 𝘁𝘄𝗼 𝘀𝗰𝗵𝗼𝗹𝗮𝗿𝘀𝗵𝗶𝗽𝘀 𝗶𝗻 𝗮 𝗿𝗼𝘄?">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/scholarship.jpg"
-                      alt="UI interactions of the week"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      Approach to tackle Scholarship
-                    </h3>
-
-                    <p class="blog-text">
-                      Being a Scholar of two Scholarship, this is how I did it.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="https://medium.com/@yashig406/my-iet-india-scholarship-award-experience-of-the-year-2023-guidance-for-the-year-2024-94d470c58cb1">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/ieee.png"
-                      alt="The forgotten art of spacing"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                    Way to IET Scholarship
-                    </h3>
-
-                    <p class="blog-text">
-                      Maxime placeat, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="https://www.linkedin.com/posts/yashigupta406_personalgrowth-collegelife-networking-activity-7197905528625246208-qHMf?utm_source=share&utm_medium=member_desktop">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/volunterr.jpeg"
-                      alt="Design digest #79"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">𝗙𝗿𝗼𝗺 𝗜𝗻𝘁𝗿𝗼𝘃𝗲𝗿𝘁 𝘁𝗼 𝗩𝗼𝗹𝘂𝗻𝘁𝗲𝗲𝗿: 𝗠𝘆 𝗝𝗼𝘂𝗿𝗻𝗲𝘆 𝗼𝗳 𝗚𝗿𝗼𝘄𝘁𝗵 📈</h3>
-
-                    <p class="blog-text">
-                      Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </article>
-
-        <!--
-        - #CONTACT
-      -->
-
-      <!-- <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:500px;"><div id="my-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src=""></iframe></div><a class="the-googlemap-enabler" rel="nofollow" href="https://www.bootstrapskins.com/themes" id="enable-maps-data">premium bootstrap themes</a><style>#my-map-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div> -->
-
-
-        <article class="contact" data-page="contact">
-          <header>
-            <h2 class="h2 article-title">Contact</h2>
-          </header>
-
-          <section class="mapbox" data-mapbox>
-            <figure>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4659566.3645654125!2d77.7445617110564!3d26.974516720019587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39994e9f7b4a09d3%3A0xf6a5476d3617249d!2sUttar%20Pradesh!5e0!3m2!1sen!2sin!4v1768754977857!5m2!1sen!2sin"
-                width="400"
-                height="300"
-                loading="lazy"
-              ></iframe>
-            </figure>
-          </section>
-
-          <section class="contact-form">
-            <h3 class="h3 form-title">Contact Form</h3>
-
-            <form action="#" class="form" data-form>
-              <div class="input-wrapper">
-                <input
-                  type="text"
-                  name="fullname"
-                  class="form-input"
-                  placeholder="Full name"
-                  required
-                  data-form-input
-                />
-
-                <input
-                  type="email"
-                  name="email"
-                  class="form-input"
-                  placeholder="Email address"
-                  required
-                  data-form-input
-                />
-              </div>
-
-              <textarea
-                name="message"
-                class="form-input"
-                placeholder="Your Message"
-                required
-                data-form-input
-              ></textarea>
-
-              <button class="form-btn" type="submit" disabled data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
-            </form>
-          </section>
+                <button class="form-btn" type="submit" disabled data-form-btn>
+                  <ion-icon name="paper-plane-outline"></ion-icon>
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </section>
+          </div>
         </article>
       </div>
     </main>
 
-    <!--
-    - custom js link
-  -->
-    <script src="./assets/js/script.js"></script>
+    <!-- ================= LIVE TERMINAL / CLI OVERLAY MODAL ================= -->
+    <div class="cmd-modal" data-cmd-modal>
+      <div class="cmd-overlay" data-cmd-close></div>
+      <div class="cmd-window">
+        <div class="cmd-bar">
+          <div class="cmd-dots">
+            <span class="dot dot-red" data-cmd-close></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="cmd-title">anmol@dev-terminal: ~ (Type 'help')</div>
+          <button class="cmd-close" data-cmd-close><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="cmd-body" data-cmd-output>
+          <div class="cmd-line intro">Welcome to Anmol's Interactive Shell v2.4.0</div>
+          <div class="cmd-line text-muted">Type <span class="term-hl">help</span> to list available commands.</div>
+        </div>
+        <div class="cmd-input-row">
+          <span class="cmd-prompt">anmol@terminal:~$</span>
+          <input type="text" class="cmd-input" data-cmd-input placeholder="type command..." autocomplete="off" spellcheck="false" />
+        </div>
+      </div>
+    </div>
 
-    <!--
-    - ionicon link
-  -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <!-- Scripts -->
+    <script src="./assets/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
